@@ -1,7 +1,28 @@
 import { SparklesIcon } from "@heroicons/react/outline"
 import Input from "./Input"
+import Post from "./Post"
 
 const Feed = () => {
+  const posts =[
+    {
+      id: '1',
+      name:'Abdullah Hasan',
+      username:'codewithabdullah',
+      userImg:'https://www.w3schools.com/howto/img_avatar.png',
+      img:'https://images.unsplash.com/photo-1616080409883-a96ae084a7e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJhbCUyMGJlYXV0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+      text: 'nice view!',
+      timestamp:'2 hours ago',
+    },
+    {
+      id: '2',
+      name:'Abdullah Hasan',
+      username:'codewithabdullah',
+      userImg:'https://www.w3schools.com/howto/img_avatar.png',
+      img:'https://images.unsplash.com/photo-1493962621260-74cc5a3baf89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyYWwlMjBiZWF1dHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      text: 'wow!!',
+      timestamp:'2 days ago',
+    }
+  ]
   return (
     <div className="xl:ml-[370px]  
                     border-l 
@@ -29,7 +50,9 @@ const Feed = () => {
         </div>
 
         <Input/>
-
+        {posts.map(post =>(
+          <Post key={post.id} post={post}/> 
+        ))}
     </div>
   )
 }
